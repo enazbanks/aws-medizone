@@ -2,18 +2,20 @@
 Medizon is a scalable cloud-based web-scale microservice application that allows employees to securely store and quickly retrieve sensitive documents, images, and metadata of patients.
 
 ## Infrastructure 
-<Image>
+<img width="871" alt="DesignArchitecture" src="https://github.com/enazbanks/aws-medizone/blob/main/medizone-images/DesignArchitecture.png">
+
 
 ## Networking & Security
 
 ### VPC
+<img alt="ResourceMap" src="https://github.com/enazbanks/aws-medizone/blob/main/medizone-images/ResourceMap.png">
+
 A Virtual Private Cloud (VPC) is designed to function as a segregated and private network with enhanced security and privacy measures. Medizone has a single VPC that spans across 2 availability zones (AZs) and consists of 4 subnets.
 
 The 2 public subnets host EC2 servers and have routes to an internet gateway, allowing for inbound and outbound internet access. They are associated with Network Access Control Lists (NACLs) that are appropriately configured to control traffic and security, permitting HTTP, HTTPS, and SSH access as needed.
 
 The 2 private subnets contain Amazon Aurora databases and have a security group configured to allow access only from specific trusted sources. SSH, MySQL/Aurora, HTTP, and HTTPS access are granted to ensure secure communication within the VPC.
-
-<Image>
+<img alt="" src=" ">
 
 ### EC2, Application Load Balancer (ALB) & Auto Scaling 
 Medizone utilizes customized EC2 virtual servers with Linux as the Operating System. The instance type chosen is t2.medium, which provides 2 virtual CPUs and 4 GiB of memory.
@@ -25,7 +27,7 @@ The ALB (Application Load Balancer) is set up to distribute incoming traffic acr
 Auto Scaling is configured to maintain a minimum of 2 and a maximum of 4 EC2 instances. This elasticity allows the infrastructure to scale according to demand by automatically replacing any failed or unhealthy instances.
 
 ## Database 
-
+<img alt="datbase" src="https://github.com/enazbanks/aws-medizone/blob/main/medizone-images/DatabaseS3.png">
 ### Amazon Aurora
 Medizone's database engine is Amazon Aurora using the MySQL-compatible version. A primary Aurora instance is created in one AZ to ensure data persistence and durability.
 
@@ -44,3 +46,12 @@ Bucket versioning is enabled to protect against accidental file deletions or mod
 
 ## Lambda & SNS
 A Lambda function is employed and connected to Amazon SNS (Simple Notification Service) to send email notifications to user subscribers when images are uploaded to the S3 bucket. This provides real-time updates to relevant parties and enhances the user experience.
+
+<img alt="Lambdafunction" src="https://github.com/enazbanks/aws-medizone/blob/main/medizone-images/LambdaFunction.png">
+
+## Caution
+This can not be stressed enough that AWS costs can go out of hand really quickly. It is very important to have checks in place to make sure that you are not going over the free tier limit. AWS offers a free tier primarily to allow users to get started with AWS quickly and upskill on the platform without any costs and this is something that needs to be utilised carefully. Refer to AWS Budgets for more information.
+
+https://aws.amazon.com/about-aws/whats-new/2022/09/aws-budgets-1-click-templates-tutorials/
+<br>
+https://www.youtube.com/watch?v=O0sofGVT7uw
