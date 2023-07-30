@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>Medizone Image Service Upload</title>
+        <meta charset="UTF-8"/>
+        <meta name=""
+            content=""/>
+        <meta name="keywords"
+            content=""/>
+        <meta name="author"
+            content=""/>
+        <link rel="stylesheet" type="text/css" href="css/abc_main.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    </head>
+
+    <body>
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Site Header -->
+            <header>
+                <!-- Header Navigation -->
+                <nav>
+                    <a href=""><img src="images/logo.png" alt="MedRemote logo" width="300"/></a>
+
+                    <!-- Navigation Menu -->
+                    <div class="nav-menu">
+
+                                <a href="index.html" class="current">IMAGE UPLOAD</a>
+
+
+                </nav>
+
+
+            </header>
+
+            <section class="body container">
+
+                <!-- Page Header -->
+                <header class="page-header">
+                    <h1>Medizone</h1>
+                    <h1>IMAGE/DOCUMENT UPLOAD</h1>
+                    <div class="page-blurb">
+                    <p>Hello Doctors! This is the portal to upload patient's details. </p>
+                    </div>
+                </header>
+
+                <!-- Full Width Form -->
+                <section class="card full-card form">
+                    <form  name="imageUpload" action="imageupload.php" method="post" enctype="multipart/form-data">
+                        <div>
+                            <label for="Document Record Key" class="title">Document Record Key</label>
+                            <input type="text" name="rkey" placeholder="" required/>
+                        </div>
+                        <div>
+                            <label for="Doctor ID" class="title">Doctor ID</label>
+                            <input type="text" name="did" placeholder="" required/>
+                        </div>
+                        <div>
+                            <label for="Patient ID" class="title">Patient ID</label>
+                            <input type="text" name="pid" placeholder="" required/>
+                        </div>
+                        <div>
+                            <label for="Document Type" class="title">Document Type</label>
+                            <input type="text" name="dtype" placeholder="" required/>
+                        </div>
+                        <div>
+                            <label for="Comments" class="title">Comments</label>
+                            <input type="text" name="comm"/>
+                        </div>
+                        <div>
+                            <label for="fileToUpload" class="title">Image File Upload</label>
+                            <input type="file" name="fileToUpload"/>
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="Submit" name="submit"/>
+                        </div>
+
+                    </form>
+                </section>
+
+            </section> <!-- Main Container -->
+
+
+            <!-- Footer -->
+            <footer class="footer container">
+
+                <!-- Footer Left Column -->
+                <div class="footer-col lsection">
+                    <div class="footer-contact-header">
+                        <h4>Contact</h4>
+                    </div>
+
+                    <div class="footer-address">
+                        <p>ABC Company</p>
+                        <p>Melbourne VIC 3000</p>
+                    </div>
+
+                    <div class="footer-contact-links">
+                        <a href="tel:614-0000-0000">+614-0000-0000</a>
+                        <br/>
+                        <a>email@abc.com.au</a>
+
+                    </div>
+                    <!-- Copyright & Privacy -->
+
+
+                </div>
+                <!-- Footer Right Column -->
+                <div class="footer-col rsection">
+
+                    <div class="footer-social-links">
+                        <a href=""><i class="fab fa-facebook"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-linkedin"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+
+                    <div class="footer-copy-privacy">
+
+                        <a href="">&copy; ABC 2022</a>
+
+                        <a class="privacy" href="">Privacy Policy</a>
+                    </div>
+                </div>
+
+            </footer>
+
+        </div>
+
+    </body>
+
+</html>
