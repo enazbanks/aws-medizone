@@ -28,6 +28,7 @@ Auto Scaling is configured to maintain a minimum of 2 and a maximum of 4 EC2 ins
 
 ## Database 
 <img alt="datbase" src="https://github.com/enazbanks/aws-medizone/blob/main/medizone-images/DatabaseS3.png">
+
 ### Amazon Aurora
 Medizone's database engine is Amazon Aurora using the MySQL-compatible version. A primary Aurora instance is created in one AZ to ensure data persistence and durability.
 
